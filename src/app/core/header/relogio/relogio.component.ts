@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./relogio.component.scss']
 })
 export class RelogioComponent implements OnInit {
-  horas!: string;
-  minutos!: string;
+  horas!: any;
+  minutos!: any;
+  periodo!: string;
   private relogioId !: any;
 
   constructor() { }
 
   ngOnInit() {
-    this.definirHorarioAtual();
+    this.formatarHorario();
     this.relogioId = this.atualizarRelogio();
   }
 
@@ -23,18 +24,26 @@ export class RelogioComponent implements OnInit {
 
   private definirHorarioAtual() {
     const horario = new Date(Date.now());
-    this.horas = this.colocarCasaDecimal(horario.getHours());
-    this.minutos = this.colocarCasaDecimal(horario.getMinutes());
+    this.horas = horario.getHours();
+    this.minutos = horario.getMinutes();
   }
 
   private atualizarRelogio() {
     setInterval(() => {
-      this.definirHorarioAtual();
+      this.formatarHorario();
     }, 1000);
   }
 
   private colocarCasaDecimal(value: number) {
     return value < 10 ? `0${value}` : value.toString();
+  }
+
+  private formatarHorario() {
+    this.definirHorarioAtual();
+    this.periodo = this.horas >= 12 ? 'PM' : 'AM';
+    this.horas = this.horas % 12;
+    this.horas = this.horas ? this.horas : 12;
+    this.minutos = this.colocarCasaDecimal(this.minutos);
   }
 
 }
