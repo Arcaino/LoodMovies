@@ -4,14 +4,15 @@
         <img class="navbar__logo" src="/assets/img/logo.svg">
     </a>
     <button class="navbar__icone" type="button">
-        <img class="navbar__icone__imagem" src="../../../../assets/icons/menu.svg">
+        <div class="navbar__icone__barraCima"></div>
+        <div class="navbar__icone__barraBaixo"></div>
     </button>
     <ul class="navbar__menu">
         <li class="navbar__menu__item">
         <a class="navbar__menu__item__link" href="#">Home</a>
         </li>
         <li class="navbar__menu__item">
-        <a class="navbar__menu__item__link menuAtivo" href="#">Movies</a>
+        <a class="navbar__menu__item__link" href="#">Movies</a>
         </li>
         <li class="navbar__menu__item">
         <a class="navbar__menu__item__link" href="#">Serials</a>
@@ -21,6 +22,10 @@
         </li>
     </ul>
     <div class="navbar__menu__pesquisa">
-        <input class="navbar__menu__pesquisa__entrada" type="text" placeholder="Search.." name="search">
+        <form class="navbar__menu__pesquisa__form" id="demo-2">
+            <input class="navbar__menu__pesquisa__form__input" type="search" placeholder="Search">
+        </form>
     </div>
-  </nav>
+</nav>
+
+  

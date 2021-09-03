@@ -5,9 +5,36 @@ app-relogio{
 .navbar{
     margin: 1rem;
     &__icone{
-        border: 0;
-        display:initial;
         background-color: transparent;
+        border: 0;
+        &__barraCima{
+            width: 38px;
+            height: 4px;
+            background-color: var(--corSecundaria);
+            border-radius: 4px;
+            margin-bottom: 6px;
+            transition-duration: .5s;
+        }
+        &__barraBaixo{
+            width: 48px;
+            height: 4px;
+            background-color: var(--corSecundaria);
+            border-radius: 4px;
+            margin-top: 6px;
+            transition-duration: .5s;
+        }
+    }
+    &__icone.ativo{
+        .navbar__icone__barraCima{
+            transition-duration: .5s;
+            width: 38px;
+            transform: rotate(-45deg) translate(-6px, -6px);
+        }
+        .navbar__icone__barraBaixo{
+            transition-duration: .5s;
+            width: 38px;
+            transform: rotate(45deg) translate(-13px, 0px);
+        }
     }
     &__logo{
         width: 10rem;
@@ -20,6 +47,7 @@ app-relogio{
             display: flex;
             justify-content: center;
             margin: 4rem 0;
+            height: 30px;
             &__link{
                 font-family: 'Roboto';
                 font-style: normal;
@@ -31,20 +59,50 @@ app-relogio{
                 text-decoration: none;
                 color: var(--corTexto);
             }
+            &__link:hover{
+                color: var(--corSecundaria);
+            }
         }
         &__pesquisa{
-            display: none;
-            &__entrada{
-                width: 12rem;
-                height: 32px;
-                margin: 0 auto;
-                padding-left: 35px;
-                border: 1px solid rgba(0, 0, 0, 0.2);
-                border-radius: 200px;
-                background-image: url('../../../../assets/icons/search-solid.svg');
-                background-repeat: no-repeat;
-                background-position: 5% center;
-                background-size: 18px 18px;
+            display: none;            
+            &__form{
+                &__input{
+                    outline: none;
+                }
+                &__input[type=search]{
+                    -webkit-appearance: textfield;
+                    box-sizing: content-box;
+                    -webkit-box-sizing: content-box;
+                    font-family: inherit;
+                    font-size: 100%;
+                    background: #fff url(../../../../assets/icons/search-solid.svg) no-repeat 9px center;
+                    background-size: 18px;
+                    border: solid 1px #ccc;
+                    padding: 9px 10px 9px 32px;
+                    width: 55px;
+                    -webkit-border-radius: 10em;
+                    -moz-border-radius: 10em;
+                    border-radius: 10em;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    transition: all .5s;
+                }
+                &__input[type=search]:focus{
+                    width: 130px;
+                    background-color: #fff;
+                    border-color: var(--corSecundaria);
+                    
+                    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+                    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+                    box-shadow: 0 0 5px rgba(109,207,246,.5);
+                }
+                &__input::-webkit-search-decoration,
+                &__input::-webkit-search-cancel-button{
+                    display: none; 
+                }
+                &__input::-webkit-input-placeholder{
+                    color: #999;
+                }
             }
         }
         &__pesquisa.active{
@@ -81,10 +139,12 @@ app-relogio{
         &__menu{
             display: flex;
             &__pesquisa{
-                display: block;
+                display: flex;
+                justify-content: end;
+                width: 175px;
             }
             &__item{
-                margin: 0 5rem;
+                margin: 0 5rem;       
             }
         }
     }
