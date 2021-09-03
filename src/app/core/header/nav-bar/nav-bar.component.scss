@@ -1,56 +1,102 @@
+app-relogio{
+    display: none;
+}
+
 .navbar{
-    &__caixa{
-        &__icone{
-            border: 0;
+    margin: 1rem;
+    &__icone{
+        border: 0;
+        display:initial;
+        background-color: transparent;
+    }
+    &__logo{
+        width: 10rem;
+    }
+    &__menu{
+        padding: 0;
+        display: none;
+        margin: 0;
+        &__item{
+            display: flex;
+            justify-content: center;
+            margin: 4rem 0;
+            &__link{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: var(--corTexto);
+            }
         }
-        &__icone:focus{
-            box-shadow: unset;
+        &__pesquisa{
+            display: none;
+            &__entrada{
+                width: 12rem;
+                height: 32px;
+                margin: 0 auto;
+                padding-left: 35px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 200px;
+                background-image: url('../../../../assets/icons/search-solid.svg');
+                background-repeat: no-repeat;
+                background-position: 5% center;
+                background-size: 18px 18px;
+            }
+        }
+        &__pesquisa.active{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+    &__menu.active{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.menuAtivo{
+    font-weight: bold;
+    border-bottom: 3px solid #D71F24;
+}
+
+@media (min-width: 992px) {
+    app-relogio{
+        display: block;
+        margin: 2.5rem 0;
+    }
+    .navbar{
+        margin: 0 5%;
+        &__icone{
+            display: none;
+        }
+        &__logo{
+            width: 10rem;
         }
         &__menu{
-            padding: 0;
-            &__item{
-                display: flex;
-                justify-content: center;
-                margin: 1rem 0;
-                &__link{
-                    font-family: 'Roboto';
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 24px;
-                    line-height: 28px;
-                    letter-spacing: 0.06em;
-                    text-transform: uppercase;
-                    color: var(--corTexto);
-                }
-                &__pesquisa{
-                    width: 12rem;
-                    height: 32px;
-                    margin: 0 auto;
-                    padding-left: 35px;
-                    border: 1px solid rgba(0, 0, 0, 0.2);
-                    border-radius: 200px;
-                    background-image: url('../../../../assets/icons/search-solid.svg');
-                    background-repeat: no-repeat;
-                    background-position: 5% center;
-                    background-size: 18px 18px;
-                }
+            display: flex;
+            &__pesquisa{
+                display: block;
             }
-            &__pesquisa::after{
-                content: "";
-                clear: both;
-                display: table;
+            &__item{
+                margin: 0 5rem;
             }
         }
     }
 }
 
-.active{
-    font-weight: bold;
-    border-bottom: 3px solid #D71F24;
-}
-
-@media (max-width: 991.98px) {
-    app-relogio{
-        display: none;
+@media (max-width: 1567.98px) {
+    .navbar{
+        &__menu{
+            &__item{
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
     }
 }
