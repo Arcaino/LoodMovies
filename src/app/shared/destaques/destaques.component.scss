@@ -1,0 +1,128 @@
+.destaques{
+    display: flex;
+    justify-content: center;
+    &__item{
+        width: 75vw;
+        background-color: var(--corFundoSobre);
+        border-radius: 10px;
+        box-shadow: 0px 4px 32px rgba(32, 32, 32, 0.14);
+        &__poster{
+            width: inherit;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+        &__direita{
+            &__informacoes{
+                font-family: 'Roboto';
+                font-style: normal;
+                letter-spacing: 0.06em;
+                color: var(--corTexto);
+                text-align: center;
+    
+                &__titulo{
+                    font-weight: bold;
+                    margin: 10px 0;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    line-height: 28px;
+                }
+                &__descricao{
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 140%;
+                    text-transform: capitalize;
+                    opacity: 0.6;
+                    margin-bottom: 0;
+                    padding: 0 1rem;
+                }
+                &__botao{
+                    border: 0;
+                    border-radius: 100px;
+                    background-color: var(--corSecundaria);
+                    color: #FFF;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 21px;
+                    text-transform: uppercase;
+                    box-shadow: 0px 8px 36px rgba(215, 31, 36, 0.14);
+                    width: 188px;
+                    height: 44px;
+                    margin: .8rem 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .destaques{
+        &__item{
+            display: flex;
+            margin-top: 2.8rem;
+            border-radius: 26px;
+            height: 30rem;
+            width: 75%;
+            &__poster{
+                border-bottom-left-radius: inherit;
+                border-top-right-radius: unset;
+            }
+            &__direita{
+                width: 30%;
+                &__informacoes{
+                    &__botao{
+                        height: 64px;
+                        margin-top: 4rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1094px) {
+    .destaques{
+        &__item{
+            &__direita{
+                &__informacoes{
+                    &__botao{
+                        margin-top: 1rem;
+                        width: 100px;
+                        height: 44px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 1922px) {
+    .destaques{
+        &__item{
+            height: unset;
+            &__poster{
+                width: 80vw;
+            }
+            &__direita{
+                &__informacoes{
+                    &__titulo{
+                        margin: 4rem 0;
+                        font-size: 1.4vw;
+                    }
+                    &__descricao{
+                        font-size: 1vw;
+                    }
+                    &__botao{
+                        width: 10vw;
+                        height: 4vw;
+                        font-size: 1vw;
+                        margin-top: 5vw;
+                    }
+                }
+            }
+
+        }
+    }
+}
