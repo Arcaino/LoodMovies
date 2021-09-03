@@ -1,0 +1,56 @@
+.navbar{
+    &__caixa{
+        &__icone{
+            border: 0;
+        }
+        &__icone:focus{
+            box-shadow: unset;
+        }
+        &__menu{
+            padding: 0;
+            &__item{
+                display: flex;
+                justify-content: center;
+                margin: 1rem 0;
+                &__link{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 24px;
+                    line-height: 28px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: var(--corTexto);
+                }
+                &__pesquisa{
+                    width: 12rem;
+                    height: 32px;
+                    margin: 0 auto;
+                    padding-left: 35px;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    border-radius: 200px;
+                    background-image: url('../../../../assets/icons/search-solid.svg');
+                    background-repeat: no-repeat;
+                    background-position: 5% center;
+                    background-size: 18px 18px;
+                }
+            }
+            &__pesquisa::after{
+                content: "";
+                clear: both;
+                display: table;
+            }
+        }
+    }
+}
+
+.active{
+    font-weight: bold;
+    border-bottom: 3px solid #D71F24;
+}
+
+@media (max-width: 991.98px) {
+    app-relogio{
+        display: none;
+    }
+}
