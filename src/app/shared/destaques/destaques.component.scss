@@ -12,13 +12,14 @@
             border-top-right-radius: inherit;
         }
         &__direita{
+            display: flex;
+            align-items: center;
             &__informacoes{
                 font-family: 'Roboto';
                 font-style: normal;
                 letter-spacing: 0.06em;
                 color: var(--corTexto);
                 text-align: center;
-    
                 &__titulo{
                     font-weight: bold;
                     margin: 10px 0;
@@ -60,7 +61,6 @@
             display: flex;
             margin-top: 2.8rem;
             border-radius: 26px;
-            height: 30rem;
             width: 75%;
             &__poster{
                 border-bottom-left-radius: inherit;
@@ -69,6 +69,9 @@
             &__direita{
                 width: 30%;
                 &__informacoes{
+                    &__titulo{
+                        margin: 2rem 0;
+                    }
                     &__botao{
                         height: 64px;
                         margin-top: 4rem;
