@@ -1,4 +1,4 @@
-<swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="10" class="mySwiper">
+<swiper [config]="config">
   <ng-container *ngFor="let item of filmesPopulares.slice(0, 3);">
     <ng-template swiperSlide class="destaques">
         <div class="destaques__item">

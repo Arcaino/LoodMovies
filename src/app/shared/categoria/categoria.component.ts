@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
-import SwiperCore, { Pagination } from 'swiper';
+import SwiperCore, { SwiperOptions  } from 'swiper';
 import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-SwiperCore.use([Pagination]);
 
 @Component({
   selector: 'app-categoria',
@@ -13,6 +12,17 @@ SwiperCore.use([Pagination]);
   styleUrls: ['./categoria.component.scss']
 })
 export class CategoriaComponent implements OnInit {
+
+  config: SwiperOptions = {
+    spaceBetween: 60,
+    initialSlide: 1,
+    autoHeight: false,
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 2,
+    centeredSlides: true,
+    slidesOffsetBefore: 0,
+  };
 
   filmesPopulares: Array<any> = new Array();
 
