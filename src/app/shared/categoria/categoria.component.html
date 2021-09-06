@@ -1,5 +1,16 @@
-<div class = "slider">
-  <div class="lista__slider">
-    <app-destaques *ngFor="let item of filmesPopulares" [item]="item"></app-destaques>
-  </div>
-</div>
+<swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="10" class="mySwiper">
+  <ng-container *ngFor="let item of filmesPopulares.slice(0, 3);">
+    <ng-template swiperSlide class="destaques">
+        <div class="destaques__item">
+          <img class="destaques__item__poster" src="https://image.tmdb.org/t/p/original{{item.backdrop_path}}">
+          <div class="destaques__item__direita">
+            <div class="destaques__item__direita__informacoes">
+              <h1 class="destaques__item__direita__informacoes__titulo">{{item.title}}</h1>
+              <h3 class="destaques__item__direita__informacoes__descricao">{{item.overview}}</h3>
+              <button class="destaques__item__direita__informacoes__botao">Watch Now</button>
+            </div>
+          </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</swiper>

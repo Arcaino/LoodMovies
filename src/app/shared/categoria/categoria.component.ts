@@ -1,5 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
+import SwiperCore, { Pagination } from 'swiper';
+import 'swiper/css/bundle';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+SwiperCore.use([Pagination]);
 
 @Component({
   selector: 'app-categoria',
@@ -24,5 +30,4 @@ export class CategoriaComponent implements OnInit {
       console.log('Erro ao listar os filmes', err);
     })
   }
-
 }
