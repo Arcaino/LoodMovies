@@ -47,7 +47,19 @@ export class CategoriaComponent implements OnInit {
         spaceBetween: 580,
         slidesOffsetBefore: -255,
       },
-      990: {
+      1100: {
+        spaceBetween: 700,
+        slidesOffsetBefore: -320,
+      },
+      1320: {
+        spaceBetween: 900,
+        slidesOffsetBefore: -400,
+      },
+      1680: {
+        spaceBetween: 1100,
+        slidesOffsetBefore: -500,
+      },
+      1900: {
         spaceBetween: 1200,
         slidesOffsetBefore: -550,
       }
