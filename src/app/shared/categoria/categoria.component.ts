@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
 import SwiperCore, { SwiperOptions  } from 'swiper';
+import * as $ from 'jquery';
 import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -82,4 +83,6 @@ export class CategoriaComponent implements OnInit {
       console.log('Erro ao listar os filmes', err);
     })
   }
+
+  
 }

@@ -1,0 +1,10 @@
+<h1 class="titulo">{{title}}</h1>
+<swiper [config]="config">
+  <ng-container *ngFor="let item of topMovies.slice(0, 20);">
+    <ng-template swiperSlide class="slider">
+      <div class="slider__item">
+        <img class="slider__item__imagem" src="https://image.tmdb.org/t/p/w300{{item.poster_path}}" alt="{{item.original_title}}">
+      </div>
+    </ng-template>
+  </ng-container>
+</swiper>

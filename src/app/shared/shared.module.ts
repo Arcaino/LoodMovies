@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ChartItemComponent } from './chart-item/chart-item.component';
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
@@ -9,10 +10,12 @@ import { SwiperModule } from 'swiper/angular';
     SwiperModule
   ],
   declarations: [
-    CategoriaComponent
+    CategoriaComponent,
+    ChartItemComponent
   ],
   exports: [
-    CategoriaComponent
+    CategoriaComponent,
+    ChartItemComponent
   ]
 })
 export class SharedModule { }
