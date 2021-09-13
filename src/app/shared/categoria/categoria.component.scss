@@ -4,6 +4,7 @@
         background-color: var(--corFundoSobre);
         border-radius: 10px;
         box-shadow: 0px 4px 32px rgba(32, 32, 32, 0.14);
+        margin: 2.8rem 0;
         &__poster{
             width: inherit;
             border-top-left-radius: inherit;
@@ -12,6 +13,8 @@
         &__direita{
             display: flex;
             align-items: center;
+            margin: auto 0;
+            height: 25rem;
             &__informacoes{
                 font-family: 'Roboto';
                 font-style: normal;
@@ -33,6 +36,12 @@
                     opacity: 0.6;
                     margin-bottom: 0;
                     padding: 0 1rem;
+                    max-height: 70%;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 12;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 &__botao{
                     border: 0;
@@ -58,8 +67,8 @@
     .destaques{
         &__item{
             display: flex;
-            margin-top: 2.8rem;
             border-radius: 26px;
+            height: 30rem;
             &__poster{
                 width: 75%;
                 border-bottom-left-radius: inherit;
@@ -67,13 +76,14 @@
             }
             &__direita{
                 width: 30%;
+                height: 100%;
                 &__informacoes{
                     &__titulo{
-                        margin: 2rem 0;
+                        margin: 2rem 1rem;
                     }
                     &__botao{
                         height: 64px;
-                        margin-top: 4rem;
+                        margin: 2rem 1rem;
                     }
                 }
             }

@@ -18,7 +18,7 @@ export class CategoriaComponent implements OnInit {
     initialSlide: 1,
     autoHeight: false,
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     slidesPerView: 2,
     centeredSlides: true,
     slidesOffsetBefore: -90,
