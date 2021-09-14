@@ -1,10 +1,15 @@
+.swiper{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .destaques{
     &__item{
         width: 75vw;
         background-color: var(--corFundoSobre);
         border-radius: 10px;
         box-shadow: 0px 4px 32px rgba(32, 32, 32, 0.14);
-        margin: 2.8rem 0;
+        margin: 1rem 0;
         &__poster{
             width: inherit;
             border-top-left-radius: inherit;

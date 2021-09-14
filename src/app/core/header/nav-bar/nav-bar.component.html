@@ -9,10 +9,10 @@
     </button>
     <ul class="navbar__menu">
         <li class="navbar__menu__item">
-        <a class="navbar__menu__item__link" href="#">Home</a>
+        <a class="navbar__menu__item__link" routerLink="/home" routerLinkActive="menuAtivo">Home</a>
         </li>
         <li class="navbar__menu__item">
-        <a class="navbar__menu__item__link" href="#">Movies</a>
+        <a class="navbar__menu__item__link" routerLink="/movies" routerLinkActive="menuAtivo">Movies</a>
         </li>
         <li class="navbar__menu__item">
         <a class="navbar__menu__item__link" href="#">Serials</a>
@@ -27,5 +27,4 @@
         </form>
     </div>
 </nav>
-
-  
+<router-outlet></router-outlet>

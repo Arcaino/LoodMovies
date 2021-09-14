@@ -13,7 +13,6 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
 
     this.abrirMenuMobile();
-    this.selecaoDeMenus();
 
   }
 
@@ -22,13 +21,6 @@ export class NavBarComponent implements OnInit {
       $(".navbar__icone").toggleClass("ativo");
       $(".navbar__menu").toggleClass("active");
       $(".navbar__menu__pesquisa").toggleClass("active");
-    })
-  }
-
-  selecaoDeMenus(){
-    $('.navbar__menu__item__link').on("click", function(){
-      $('.navbar__menu__item__link').removeClass("menuAtivo");
-      $(this).toggleClass("menuAtivo");
     })
   }
 
