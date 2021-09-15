@@ -7,7 +7,6 @@ import * as $ from 'jquery';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +20,7 @@ export class NavBarComponent implements OnInit {
       $(".navbar__menu__pesquisa").toggleClass("active");
     })
   }
+
+
 
 }

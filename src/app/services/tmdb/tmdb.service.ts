@@ -33,5 +33,4 @@ constructor(private httpClient: HttpClient) { }
   public listarSeriesTopRated() : Observable<any>{
     return this.httpClient.get(`${API_BASE}tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
   }
-
 }

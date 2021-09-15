@@ -68,22 +68,8 @@ export class CategoriaComponent implements OnInit {
     }
   };
 
-  filmesLancamentos: Array<any> = new Array();
-
-  constructor(private tmdbService: TmdbService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.listarFilmesLancamentos();
   }
-
-  listarFilmesLancamentos(){
-    this.tmdbService.listarLancamentos().subscribe(filmesLancamentos => {
-      this.filmesLancamentos = filmesLancamentos.results;
-      console.log(this.filmesLancamentos);
-    }, err => {
-      console.log('Erro ao listar os filmes', err);
-    })
-  }
-
-  
 }

@@ -12,6 +12,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
     this.listaService.listarTopMovies();
+    this.listaService.listarFilmesLancamentos();
   }
 
 }
