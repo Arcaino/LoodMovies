@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
+import { ListasService } from './pages/listas.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { PagesModule } from './pages/pages.module';
     CoreModule,
     PagesModule
   ],
-  providers: [],
+  providers: [ListasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
