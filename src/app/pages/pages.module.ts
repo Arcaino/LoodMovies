@@ -4,6 +4,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { SerialsComponent } from './serials/serials.component';
 
 @NgModule({
   imports: [
@@ -14,10 +15,12 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     MoviesComponent,
     HomeComponent,
+    SerialsComponent
   ],
   exports: [
     MoviesComponent,
-    HomeComponent
+    HomeComponent,
+    SerialsComponent
   ]
 })
 export class PagesModule { }

@@ -1,7 +1,6 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
 import SwiperCore, { SwiperOptions  } from 'swiper';
-import * as $ from 'jquery';
 import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,6 +12,8 @@ import 'swiper/css/pagination';
   styleUrls: ['./categoria.component.scss']
 })
 export class CategoriaComponent implements OnInit {
+
+  @Input() listaAPI : any;
 
   config: SwiperOptions = {
     spaceBetween: 200,

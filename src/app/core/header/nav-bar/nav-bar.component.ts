@@ -11,9 +11,7 @@ export class NavBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
     this.abrirMenuMobile();
-
   }
 
   abrirMenuMobile(){

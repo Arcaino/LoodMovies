@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ListasService } from '../listas.service';
 
 @Component({
   selector: 'app-movies',
@@ -7,11 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  @Input('topMovies') topMovies: any;
-
-  constructor() { }
+  constructor(public listaService: ListasService) { }
 
   ngOnInit() {
+    this.listaService.listarTopMovies();
   }
 
 }

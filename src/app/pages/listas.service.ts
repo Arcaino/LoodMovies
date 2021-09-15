@@ -10,6 +10,8 @@ export class ListasService {
   trendingFilms: Array<any> = new Array();
   filmesPopulares: Array<any> = new Array();
   filmesLancamentos: Array<any> = new Array();
+  seriesPopulares: Array<any> = new Array();
+  seriesMaisBemVotadas: Array<any> = new Array();
 
 constructor(private tmdbService: TmdbService) { }
 
@@ -42,6 +44,22 @@ listarFilmesLancamentos(){
     this.filmesLancamentos = filmesLancamentos.results;
   }, err => {
     console.log('Erro ao listar filmes em lançamento', err);
+  })
+}
+
+listarSeriesPopulares(){
+  this.tmdbService.listarSeriesPopulares().subscribe(seriesPopulares => {
+    this.seriesPopulares = seriesPopulares.results;
+  }, err => {
+    console.log('Erro ao listar séries populares', err);
+  })
+}
+
+listarSeriesMaisBemVotadas(){
+  this.tmdbService.listarSeriesTopRated().subscribe(seriesMaisBemVotadas => {
+    this.seriesMaisBemVotadas = seriesMaisBemVotadas.results;
+  }, err => {
+    console.log('Erro ao listar séries mais bem votadas', err);
   })
 }
 

@@ -26,4 +26,12 @@ constructor(private httpClient: HttpClient) { }
     return this.httpClient.get(`${API_BASE}trending/all/day?api_key=${API_KEY}`)
   }
 
+  public listarSeriesPopulares() : Observable<any>{
+    return this.httpClient.get(`${API_BASE}tv/popular?api_key=${API_KEY}&language=en-US&page=1`)
+  }
+
+  public listarSeriesTopRated() : Observable<any>{
+    return this.httpClient.get(`${API_BASE}tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
+  }
+
 }

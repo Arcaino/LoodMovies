@@ -1,5 +1,5 @@
 <swiper [config]="config">
-  <ng-container *ngFor="let item of filmesLancamentos.slice(0, 5);">
+  <ng-container *ngFor="let item of listaAPI.slice(0, 5);">
     <ng-template swiperSlide class="destaques">
         <div class="destaques__item">
           <img class="destaques__item__poster" src="https://image.tmdb.org/t/p/original{{item.backdrop_path}}">

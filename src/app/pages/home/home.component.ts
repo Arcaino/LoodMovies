@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListasService } from '../listas.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listaService.listarTopMovies();
+    this.listaService.listarSeriesPopulares();
     this.listaService.listarTrendingFilms();
     this.listaService.listarFilmesPopulares();
     this.listaService.listarFilmesLancamentos();
