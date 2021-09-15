@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TmdbService } from 'src/app/services/tmdb/tmdb.service';
 import SwiperCore, { SwiperOptions  } from 'swiper';
 import 'swiper/css/bundle';
 import 'swiper/css';
@@ -14,6 +13,7 @@ import 'swiper/css/pagination';
 export class ChartItemComponent implements OnInit {
 
   @Input() title = '';
+  @Input() listaAPI : any;
 
   config: SwiperOptions = {
     spaceBetween: 30,
@@ -49,21 +49,13 @@ export class ChartItemComponent implements OnInit {
     },
   };
 
-  topMovies: Array<any> = new Array();
 
-  constructor(private tmdbService: TmdbService) { }
+
+  constructor() { }
 
   ngOnInit() {
-    this.listarTopMovies();
+    
   }
 
-  listarTopMovies(){
-    this.tmdbService.listarFilmes().subscribe(topMovies => {
-      this.topMovies = topMovies.results;
-      console.log(this.topMovies);
-    }, err => {
-      console.log('Erro ao listar os filmes', err);
-    })
-  }
 
 }
