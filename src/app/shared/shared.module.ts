@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ChartItemComponent } from './chart-item/chart-item.component';
 import { SwiperModule } from 'swiper/angular';
+import { ChartItemRoutingModule } from './chart-item/chart-item-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    SwiperModule
+    SwiperModule,
+    ChartItemRoutingModule
   ],
   declarations: [
     CategoriaComponent,

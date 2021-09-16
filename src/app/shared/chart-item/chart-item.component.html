@@ -2,9 +2,11 @@
   <h1 class="titulo">{{title}}</h1>
   <swiper [config]="config">
     <ng-container *ngFor="let item of listaAPI.slice(0, 20);">
-      <ng-template swiperSlide class="chart__slider">
+      <ng-template swiperSlide class="chart__slider">   
         <div class="chart__slider__item">
-          <img class="chart__slider__item__imagem" src="https://image.tmdb.org/t/p/w300{{item.poster_path}}" alt="{{item.original_title}}">
+          <a [routerLink]="['/info', item.id]">
+            <img class="chart__slider__item__imagem" src="https://image.tmdb.org/t/p/w300{{item.poster_path}}" alt="{{item.original_title}}">
+          </a>
         </div>
       </ng-template>
     </ng-container>

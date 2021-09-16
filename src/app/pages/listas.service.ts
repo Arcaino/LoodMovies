@@ -12,6 +12,7 @@ export class ListasService {
   filmesLancamentos: Array<any> = new Array();
   seriesPopulares: Array<any> = new Array();
   seriesMaisBemVotadas: Array<any> = new Array();
+  infoFilmeSelecionado: Array<any> = new Array();
 
 constructor(private tmdbService: TmdbService) { }
 
@@ -60,6 +61,14 @@ listarSeriesMaisBemVotadas(){
     this.seriesMaisBemVotadas = seriesMaisBemVotadas.results;
   }, err => {
     console.log('Erro ao listar séries mais bem votadas', err);
+  })
+}
+
+obterInformacoesMidiaSelecionada(id: number){
+  this.tmdbService.obterInformacoesDoFilmePorId(id).subscribe(infoFilmeSelecionado => {
+    this.infoFilmeSelecionado = infoFilmeSelecionado;
+  }, err => {
+    console.log('Erro ao listar informações do filme selecionado', err);
   })
 }
 

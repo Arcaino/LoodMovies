@@ -14,6 +14,7 @@ export class ChartItemComponent implements OnInit {
 
   @Input() title = '';
   @Input() listaAPI : any;
+  @Input() item : any;
 
   config: SwiperOptions = {
     spaceBetween: 30,
@@ -54,8 +55,6 @@ export class ChartItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
-
 
 }
