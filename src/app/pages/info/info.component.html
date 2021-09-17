@@ -1,4 +1,18 @@
-<h1>Informações</h1>
-
-
-
+<div class="informacoes">
+    <img class="informacoes__imagem" src="https://image.tmdb.org/t/p/w300{{listaService.infoFilmeSelecionado.poster_path}}" alt="{{listaService.infoFilmeSelecionado.original_title}}">
+    <div class="informacoes__sobre">
+        <h1 class="informacoes__sobre__titulo">{{listaService.infoFilmeSelecionado.title}}</h1>
+        <div class="informacoes__sobre__detalhes">
+            <p>{{listaService.infoFilmeSelecionado.vote_average}} &#9679;
+                {{listaService.infoFilmeSelecionado.genres[0].name}}, {{listaService.infoFilmeSelecionado.genres[1].name}} &#9679;
+                {{listaService.infoFilmeSelecionado.release_date}}
+            </p>
+            <p>
+                {{listaService.infoFilmeSelecionado.overview}}
+            </p>
+            <a class="informacoes__sobre__detalhes__simbolo">
+                <img class="informacoes__sobre__detalhes__simbolo__icone" src="../../../assets/icons/heart-regular.svg">
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.informacoes{
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: var(--corFundoSobre);
+    filter: drop-shadow(0px 4px 32px rgba(32, 32, 32, 0.34));
+    width: 75%;
+    &__imagem{
+        width: 100%;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+    &__sobre{
+        margin: 1rem .5rem;
+        text-align: center;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+        color: var(--corTexto);
+        &__detalhes{
+            &__simbolo{
+                &__icone{
+                    width: 2rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

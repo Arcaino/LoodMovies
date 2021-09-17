@@ -17,5 +17,8 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.listaService.obterInformacoesMidiaSelecionada(this.id);
+    this.listaService.listarTopMovies();
+    console.log(this.listaService.topMovies);
+    console.log(this.listaService.infoFilmeSelecionado);
   }
 }

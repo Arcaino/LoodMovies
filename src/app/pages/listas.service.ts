@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FilmeDetalhes, Midia } from '../models/midias-model';
 import { TmdbService } from '../services/tmdb/tmdb.service';
 
 @Injectable({
@@ -6,67 +7,67 @@ import { TmdbService } from '../services/tmdb/tmdb.service';
 })
 export class ListasService {
 
-  topMovies: Array<any> = new Array();
-  trendingFilms: Array<any> = new Array();
-  filmesPopulares: Array<any> = new Array();
-  filmesLancamentos: Array<any> = new Array();
-  seriesPopulares: Array<any> = new Array();
-  seriesMaisBemVotadas: Array<any> = new Array();
-  infoFilmeSelecionado: Array<any> = new Array();
+  topMovies: Midia[] = [];
+  trendingFilms: Midia[] = [];
+  filmesPopulares: Midia[] = [];
+  filmesLancamentos: Midia[] = [];
+  seriesPopulares: Midia[] = [];
+  seriesMaisBemVotadas: Midia[] = [];
+  declare infoFilmeSelecionado: FilmeDetalhes;
 
 constructor(private tmdbService: TmdbService) { }
 
 listarTopMovies(){
-  this.tmdbService.listarTopRated().subscribe(topMovies => {
-    this.topMovies = topMovies.results;
+  this.tmdbService.listarTopRated().subscribe(data => {
+    this.topMovies = data.results;
   }, err => {
     console.log('Erro ao listar os filmes', err);
   })
 }
 
 listarTrendingFilms(){
-  this.tmdbService.listarTrendingFilms().subscribe(trendingFilms => {
-    this.trendingFilms = trendingFilms.results;
+  this.tmdbService.listarTrendingFilms().subscribe(data => {
+    this.trendingFilms = data.results;
   }, err => {
     console.log('Erro ao listar os trending films', err);
   })
 }
 
 listarFilmesPopulares(){
-  this.tmdbService.listarPopularFilmes().subscribe(filmesPopulares => {
-    this.filmesPopulares = filmesPopulares.results;
+  this.tmdbService.listarPopularFilmes().subscribe(data => {
+    this.filmesPopulares = data.results;
   }, err => {
     console.log('Erro ao listar filmes populares', err);
   })
 }
 
 listarFilmesLancamentos(){
-  this.tmdbService.listarLancamentos().subscribe(filmesLancamentos => {
-    this.filmesLancamentos = filmesLancamentos.results;
+  this.tmdbService.listarLancamentos().subscribe(data => {
+    this.filmesLancamentos = data.results;
   }, err => {
     console.log('Erro ao listar filmes em lançamento', err);
   })
 }
 
 listarSeriesPopulares(){
-  this.tmdbService.listarSeriesPopulares().subscribe(seriesPopulares => {
-    this.seriesPopulares = seriesPopulares.results;
+  this.tmdbService.listarSeriesPopulares().subscribe(data => {
+    this.seriesPopulares = data.results;
   }, err => {
     console.log('Erro ao listar séries populares', err);
   })
 }
 
 listarSeriesMaisBemVotadas(){
-  this.tmdbService.listarSeriesTopRated().subscribe(seriesMaisBemVotadas => {
-    this.seriesMaisBemVotadas = seriesMaisBemVotadas.results;
+  this.tmdbService.listarSeriesTopRated().subscribe(data => {
+    this.seriesMaisBemVotadas = data.results;
   }, err => {
     console.log('Erro ao listar séries mais bem votadas', err);
   })
 }
 
 obterInformacoesMidiaSelecionada(id: number){
-  this.tmdbService.obterInformacoesDoFilmePorId(id).subscribe(infoFilmeSelecionado => {
-    this.infoFilmeSelecionado = infoFilmeSelecionado;
+  this.tmdbService.obterInformacoesDoFilmePorId(id).subscribe(data => {
+    this.infoFilmeSelecionado = data;
   }, err => {
     console.log('Erro ao listar informações do filme selecionado', err);
   })
