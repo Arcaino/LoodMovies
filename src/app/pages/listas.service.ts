@@ -13,6 +13,7 @@ export class ListasService {
   filmesLancamentos: Midia[] = [];
   seriesPopulares: Midia[] = [];
   seriesMaisBemVotadas: Midia[] = [];
+  filmesSimilares: Midia[] = [];
   declare infoFilmeSelecionado: FilmeDetalhes;
 
 constructor(private tmdbService: TmdbService) { }
@@ -70,6 +71,15 @@ obterInformacoesMidiaSelecionada(id: number){
     this.infoFilmeSelecionado = data;
   }, err => {
     console.log('Erro ao listar informações do filme selecionado', err);
+  })
+}
+
+obterFilmesSimilares(id: number){
+  this.tmdbService.obterFilmesSimilaresPorId(id).subscribe(data => {
+    this.filmesSimilares = data.results;
+    console.log(this.filmesSimilares);
+  }, err => {
+    console.log('Erro ao obter a lista de filmes similares', err);
   })
 }
 

@@ -29,3 +29,12 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .informacoes{
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+    }
+}

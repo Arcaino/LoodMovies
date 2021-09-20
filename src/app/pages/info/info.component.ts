@@ -18,6 +18,7 @@ export class InfoComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.listaService.obterInformacoesMidiaSelecionada(this.id);
     this.listaService.listarTopMovies();
+    this.listaService.obterFilmesSimilares(this.id);
     console.log(this.listaService.topMovies);
     console.log(this.listaService.infoFilmeSelecionado);
   }

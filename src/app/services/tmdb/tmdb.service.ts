@@ -38,4 +38,8 @@ constructor(private httpClient: HttpClient) { }
   public obterInformacoesDoFilmePorId(id: number) : Observable<FilmeDetalhes>{
     return this.httpClient.get<FilmeDetalhes>(`${API_BASE}movie/${id}?api_key=${API_KEY}&language=en-US`)
   }
+
+  public obterFilmesSimilaresPorId(id: number) : Observable<ResponsePageable>{
+    return this.httpClient.get<ResponsePageable>(`${API_BASE}movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
+  } 
 }
