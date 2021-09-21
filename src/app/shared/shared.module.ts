@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoriaComponent } from './categoria/categoria.component';
-import { ChartItemComponent } from './chart-item/chart-item.component';
+import { SliderComponent } from './slider/slider.component';
 import { SwiperModule } from 'swiper/angular';
-import { ChartItemRoutingModule } from './chart-item/chart-item-routing.module';
+import { ChartItemRoutingModule } from './slider/slider-routing.module';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   imports: [
@@ -13,11 +14,13 @@ import { ChartItemRoutingModule } from './chart-item/chart-item-routing.module';
   ],
   declarations: [
     CategoriaComponent,
-    ChartItemComponent
+    SliderComponent,
+    ItemComponent
   ],
   exports: [
     CategoriaComponent,
-    ChartItemComponent
+    SliderComponent,
+    ItemComponent
   ]
 })
 export class SharedModule { }

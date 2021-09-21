@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 @Component({
-  selector: 'app-chart-item',
-  templateUrl: './chart-item.component.html',
-  styleUrls: ['./chart-item.component.scss']
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.scss']
 })
-export class ChartItemComponent implements OnInit {
+export class SliderComponent implements OnInit {
 
   @Input() title = '';
   @Input() listaAPI : any;
