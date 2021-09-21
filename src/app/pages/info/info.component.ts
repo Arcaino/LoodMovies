@@ -19,8 +19,6 @@ export class InfoComponent implements OnInit {
     this.listaService.obterInformacoesMidiaSelecionada(this.id);
     this.listaService.listarTopMovies();
     this.listaService.obterFilmesSimilares(this.id);
-    console.log(this.listaService.topMovies);
-    console.log(this.listaService.infoFilmeSelecionado);
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 }

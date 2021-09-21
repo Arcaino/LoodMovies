@@ -13,6 +13,7 @@ export class SerialsComponent implements OnInit {
   ngOnInit() {
     this.listaService.listarSeriesPopulares();
     this.listaService.listarSeriesMaisBemVotadas();
+    console.log(this.listaService.seriesMaisBemVotadas);
   }
 
 }

@@ -1,11 +1,11 @@
 <swiper [config]="config">
   <ng-container *ngFor="let item of listaAPI.slice(0, 5);">
-    <ng-template swiperSlide class="destaques">
+    <ng-template swiperSlide class="destaques" *ngIf="item.backdrop_path">
         <div class="destaques__item">
           <img class="destaques__item__poster" src="https://image.tmdb.org/t/p/original{{item.backdrop_path}}">
           <div class="destaques__item__direita">
             <div class="destaques__item__direita__informacoes">
-              <h1 class="destaques__item__direita__informacoes__titulo">{{item.title}}</h1>
+              <h1 class="destaques__item__direita__informacoes__titulo">{{item.title || item.name}}</h1>
               <h3 class="destaques__item__direita__informacoes__descricao">{{item.overview}}</h3>
               <button class="destaques__item__direita__informacoes__botao">About</button>
             </div>

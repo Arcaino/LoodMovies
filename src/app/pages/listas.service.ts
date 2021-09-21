@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilmeDetalhes, Midia } from '../models/midias-model';
+import { FilmeDetalhes, Midia, SeriesDetalhes } from '../models/midias-model';
 import { TmdbService } from '../services/tmdb/tmdb.service';
 
 @Injectable({
@@ -15,6 +15,7 @@ export class ListasService {
   seriesMaisBemVotadas: Midia[] = [];
   filmesSimilares: Midia[] = [];
   declare infoFilmeSelecionado: FilmeDetalhes;
+  declare infoSerieSelecionada: SeriesDetalhes;
 
 constructor(private tmdbService: TmdbService) { }
 
@@ -71,6 +72,14 @@ obterInformacoesMidiaSelecionada(id: number){
     this.infoFilmeSelecionado = data;
   }, err => {
     console.log('Erro ao listar informações do filme selecionado', err);
+  })
+}
+
+obterInformacoesSerieSelecionada(id: number){
+  this.tmdbService.obterInformacoesDaSeriePorId(id).subscribe(data => {
+    this.infoSerieSelecionada = data;
+  }, err => {
+    console.log('Erro ao listar informações da série selecionada', err);
   })
 }
 

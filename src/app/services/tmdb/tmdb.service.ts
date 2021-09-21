@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_BASE, API_KEY } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { FilmeDetalhes, Midia, ResponsePageable } from 'src/app/models/midias-model';
+import { FilmeDetalhes, ResponsePageable, SeriesDetalhes } from 'src/app/models/midias-model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +37,10 @@ constructor(private httpClient: HttpClient) { }
 
   public obterInformacoesDoFilmePorId(id: number) : Observable<FilmeDetalhes>{
     return this.httpClient.get<FilmeDetalhes>(`${API_BASE}movie/${id}?api_key=${API_KEY}&language=en-US`)
+  }
+
+  public obterInformacoesDaSeriePorId(id: number) : Observable<SeriesDetalhes>{
+    return this.httpClient.get<SeriesDetalhes>(`${API_BASE}tv/${id}?api_key=${API_KEY}&language=en-US`)
   }
 
   public obterFilmesSimilaresPorId(id: number) : Observable<ResponsePageable>{

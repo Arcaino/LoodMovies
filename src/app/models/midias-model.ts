@@ -5,6 +5,40 @@ export interface ResponsePageable{
     total_results: number;
 }
 
+export interface SeriesDetalhes{
+    backdrop_path: string;
+    created_by: Array<any>;
+    episode_run_time: Array<any>;
+    first_air_date: string;
+    genres: Array<any>;
+    homepage: string;
+    id: number;
+    in_production: boolean;
+    languages: Array<any>;
+    last_air_date: string;
+    last_episode_to_air: Array<any>;
+    name: string;
+    next_episode_to_air: Array<any>
+    networks: Array<any>
+    number_of_episodes: number;
+    number_of_seasons: number;
+    origin_country: Array<any>
+    original_language: string;
+    original_name: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    production_companies: Array<any>
+    production_countries: Array<any>
+    seasons: Array<any>;
+    spoken_languages: Array<any>
+    status: string;
+    tagline: string;
+    type: string;
+    vote_average: number;
+    vote_count: number;
+}
+
 export interface Midia{
     adult: boolean;
     backdrop_path: string;
