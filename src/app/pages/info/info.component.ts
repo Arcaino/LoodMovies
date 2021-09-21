@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ListasService } from '../listas.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class InfoComponent implements OnInit {
 
   id: number = 0;
   
-  constructor(private route: ActivatedRoute, public listaService: ListasService) {
+  constructor(private route: ActivatedRoute, public listaService: ListasService, private router: Router) {
   }
 
   ngOnInit() {
@@ -21,5 +21,6 @@ export class InfoComponent implements OnInit {
     this.listaService.obterFilmesSimilares(this.id);
     console.log(this.listaService.topMovies);
     console.log(this.listaService.infoFilmeSelecionado);
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 }

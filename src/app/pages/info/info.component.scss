@@ -1,9 +1,12 @@
 .informacoes{
-    margin: 0 auto;
+    margin: 2rem auto;
     border-radius: 15px;
     background-color: var(--corFundoSobre);
     filter: drop-shadow(0px 4px 32px rgba(32, 32, 32, 0.34));
     width: 75%;
+    &__cover{
+        display: none;
+    }
     &__imagem{
         width: 100%;
         border-top-left-radius: inherit;
@@ -25,6 +28,9 @@
                     width: 2rem;
                     margin-bottom: 1rem;
                 }
+                &__text{
+                    display: none;
+                }
             }
         }
     }
@@ -36,5 +42,56 @@
         border-radius: 0;
         display: flex;
         align-items: center;
+        &__imagem{
+            width: 20rem;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .informacoes{
+        &__imagem{
+            width: 25rem;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .informacoes{
+        height: 30rem;
+        &__cover{
+            display: block;
+            height: 100%;
+            width: 100%;
+            z-index: -9;
+            position:absolute;
+            object-fit: cover;
+            filter: brightness(.4);
+        }
+        &__imagem{
+            height: 80%;
+            width: unset;
+            margin: 0 2rem;
+        }
+        &__sobre{
+            text-align: start;
+            color: #FFFF;
+            width: 50%;
+            &__detalhes{
+                &__simbolo{
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    &__icone{
+                        filter: brightness(0) invert(1);
+                    }
+                    &__text{
+                        margin-left: 1rem;
+                        display: block;
+                        color: #FFFF;
+                    }
+                }
+            }
+        }
     }
 }

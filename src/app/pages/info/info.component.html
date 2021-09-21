@@ -1,5 +1,6 @@
 <div class="informacoes">
-    <img class="informacoes__imagem" src="https://image.tmdb.org/t/p/w300{{listaService.infoFilmeSelecionado.poster_path}}" alt="{{listaService.infoFilmeSelecionado.original_title}}">
+    <img class="informacoes__cover" src="https://image.tmdb.org/t/p/original{{listaService.infoFilmeSelecionado.backdrop_path}}">
+    <img class="informacoes__imagem" src="https://image.tmdb.org/t/p/w500{{listaService.infoFilmeSelecionado.poster_path}}" alt="{{listaService.infoFilmeSelecionado.original_title}}">
     <div class="informacoes__sobre">
         <h1 class="informacoes__sobre__titulo">{{listaService.infoFilmeSelecionado.title}}</h1>
         <div class="informacoes__sobre__detalhes">
@@ -12,6 +13,7 @@
             </p>
             <a class="informacoes__sobre__detalhes__simbolo">
                 <img class="informacoes__sobre__detalhes__simbolo__icone" src="../../../assets/icons/heart-regular.svg">
+                <p class="informacoes__sobre__detalhes__simbolo__text">Adicionar aos favoritos</p>
             </a>
         </div>
     </div>
