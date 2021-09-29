@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { SerialsComponent } from './serials/serials.component';
 import { InfoComponent } from './info/info.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -17,13 +18,15 @@ import { InfoComponent } from './info/info.component';
     MoviesComponent,
     HomeComponent,
     SerialsComponent,
-    InfoComponent
+    InfoComponent,
+    SearchComponent
   ],
   exports: [
     MoviesComponent,
     HomeComponent,
     SerialsComponent,
-    InfoComponent
+    InfoComponent,
+    SearchComponent
   ]
 })
 export class PagesModule { }

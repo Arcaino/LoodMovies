@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilmeDetalhes, Midia, SeriesDetalhes } from '../models/midias-model';
+import { FilmeDetalhes, Filme, SeriesDetalhes, Serie } from '../models/midias-model';
 import { TmdbService } from '../services/tmdb/tmdb.service';
 
 @Injectable({
@@ -7,13 +7,14 @@ import { TmdbService } from '../services/tmdb/tmdb.service';
 })
 export class ListasService {
 
-  topMovies: Midia[] = [];
-  trendingFilms: Midia[] = [];
-  filmesPopulares: Midia[] = [];
-  filmesLancamentos: Midia[] = [];
-  seriesPopulares: Midia[] = [];
-  seriesMaisBemVotadas: Midia[] = [];
-  filmesSimilares: Midia[] = [];
+  topMovies: Filme[] = [];
+  trendingFilms: Filme[] = [];
+  filmesPopulares: Filme[] = [];
+  filmesLancamentos: Filme[] = [];
+  seriesPopulares: Serie[] = [];
+  seriesMaisBemVotadas: Serie[] = [];
+  filmesSimilares: Filme[] = [];
+  pesquisaItems: any;
   declare infoFilmeSelecionado: FilmeDetalhes;
   declare infoSerieSelecionada: SeriesDetalhes;
 
@@ -86,9 +87,17 @@ obterInformacoesSerieSelecionada(id: number){
 obterFilmesSimilares(id: number){
   this.tmdbService.obterFilmesSimilaresPorId(id).subscribe(data => {
     this.filmesSimilares = data.results;
-    console.log(this.filmesSimilares);
   }, err => {
     console.log('Erro ao obter a lista de filmes similares', err);
+  })
+}
+
+pesquisaGeral(query: string){
+  this.tmdbService.pesquisaGeral(query).subscribe(data => {
+    this.pesquisaItems = data.results;
+    console.log(this.pesquisaItems);
+  }, err => {
+    console.log('Erro ao pesquisar item desejado', err);
   })
 }
 

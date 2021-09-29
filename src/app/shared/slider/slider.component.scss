@@ -1,11 +1,17 @@
-.titulo{
-    margin-left: 40px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: var(--corTexto);
+.chart{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    &__titulo{
+        margin-left: 40px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--corTexto);
+    }
 }
+
+

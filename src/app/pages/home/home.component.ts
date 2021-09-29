@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     this.listaService.listarTrendingFilms();
     this.listaService.listarFilmesPopulares();
     this.listaService.listarFilmesLancamentos();
+    console.log(this.listaService.filmesPopulares[0].media);
   }
 
 }
