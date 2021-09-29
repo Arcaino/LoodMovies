@@ -1,1 +1,10 @@
-<input id="pesquisa" placeholder="Search...">
+<div class="pesquisa">
+  <input type="text" class="pesquisa__input" id="pesquisa" placeholder="Search...">
+</div>
+<h1 class="titulo">Principais buscas</h1>
+
+<div class="midias">
+  <ng-container *ngFor="let item of listaService.todosEmTrending;">
+    <app-item class="midias__item" [item]="item"></app-item>
+  </ng-container>
+</div>

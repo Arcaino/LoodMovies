@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ListasService } from '../listas.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  @Input() item : any;
+
+  constructor(public listaService: ListasService) { }
 
   ngOnInit() {
+    this.listaService.listarEmAlta();
+    console.log(this.listaService.todosEmTrending);
   }
 
 }

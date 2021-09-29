@@ -1,0 +1,44 @@
+.pesquisa{
+    display: flex;
+    justify-content: center;
+    &__input{
+        -webkit-appearance: textfield;
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        font-family: inherit;
+        font-size: 100%;
+        background: #fff url('../../../assets/icons/search-solid.svg') no-repeat 9px center;
+        background-size: 18px;
+        border: solid 1px #ccc;
+        padding: 9px 10px 9px 32px;
+        width: 70%;
+        border-radius: 10em;
+        transition: all .5s;
+    }
+}
+
+.titulo{
+    margin: 1rem 20px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--corTexto);
+}
+
+.midias{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+:host ::ng-deep .item{
+    margin: 0 !important;
+    &__imagem{
+        width: 8rem !important;
+    }
+}

@@ -15,6 +15,7 @@ export class ListasService {
   seriesMaisBemVotadas: Serie[] = [];
   filmesSimilares: Filme[] = [];
   pesquisaItems: any;
+  todosEmTrending: Array<any> = [];
   declare infoFilmeSelecionado: FilmeDetalhes;
   declare infoSerieSelecionada: SeriesDetalhes;
 
@@ -33,6 +34,14 @@ listarTrendingFilms(){
     this.trendingFilms = data.results;
   }, err => {
     console.log('Erro ao listar os trending films', err);
+  })
+}
+
+listarEmAlta(){
+  this.tmdbService.listarTodosEmTrending().subscribe(data => {
+    this.todosEmTrending = data.results;
+  }, err => {
+    console.log('Erro ao listar midias em alta', err);
   })
 }
 

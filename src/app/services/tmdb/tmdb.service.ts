@@ -50,4 +50,8 @@ constructor(private httpClient: HttpClient) { }
   public pesquisaGeral(query : string) : Observable<any>{
     return this.httpClient.get<any>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
   }
+
+  public listarTodosEmTrending() : Observable<any>{
+    return this.httpClient.get<any>(`${API_BASE}trending/all/week?api_key=${API_KEY}`)
+  }
 }
