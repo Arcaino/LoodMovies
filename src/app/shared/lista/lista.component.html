@@ -1,0 +1,10 @@
+<div class="resultados">
+  <div class="resultados__midias">
+    <ng-container *ngFor="let item of listaAPI;">
+      <app-item *ngIf="item.poster_path" class="resultados__midias__item" [item]="item"></app-item>
+    </ng-container>
+    <ng-container *ngFor="let item of listaAPIComplementar;">
+      <app-item class="resultados__midias__item" [item]="item"></app-item>
+    </ng-container>
+  </div>
+</div>

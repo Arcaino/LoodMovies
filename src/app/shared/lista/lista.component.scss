@@ -1,0 +1,17 @@
+.resultados{
+    display: flex;
+    justify-content: center;
+    &__midias{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        width: 85%;
+    }
+}
+
+:host ::ng-deep .item{
+    margin: 0 !important;
+    &__imagem{
+        width: 8rem !important;
+    }
+}

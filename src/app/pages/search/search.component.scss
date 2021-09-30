@@ -28,17 +28,3 @@
     text-transform: uppercase;
     color: var(--corTexto);
 }
-
-.midias{
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    gap: 1rem;
-}
-
-:host ::ng-deep .item{
-    margin: 0 !important;
-    &__imagem{
-        width: 8rem !important;
-    }
-}

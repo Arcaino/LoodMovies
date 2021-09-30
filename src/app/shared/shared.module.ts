@@ -5,6 +5,7 @@ import { SliderComponent } from './slider/slider.component';
 import { SwiperModule } from 'swiper/angular';
 import { ChartItemRoutingModule } from './slider/slider-routing.module';
 import { ItemComponent } from './item/item.component';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
   imports: [
@@ -15,12 +16,14 @@ import { ItemComponent } from './item/item.component';
   declarations: [
     CategoriaComponent,
     SliderComponent,
-    ItemComponent
+    ItemComponent,
+    ListaComponent
   ],
   exports: [
     CategoriaComponent,
     SliderComponent,
-    ItemComponent
+    ItemComponent,
+    ListaComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilmeDetalhes, Filme, SeriesDetalhes, Serie } from '../models/midias-model';
+import { FilmeDetalhes, Filme, SeriesDetalhes, Serie, Midia } from '../models/midias-model';
 import { TmdbService } from '../services/tmdb/tmdb.service';
 
 @Injectable({
@@ -14,8 +14,9 @@ export class ListasService {
   seriesPopulares: Serie[] = [];
   seriesMaisBemVotadas: Serie[] = [];
   filmesSimilares: Filme[] = [];
-  pesquisaItems: any;
-  todosEmTrending: Array<any> = [];
+  seriesSimilares: Serie[] = [];
+  pesquisaItems: Midia[] = [];
+  todosEmTrending: Midia[] = [];
   declare infoFilmeSelecionado: FilmeDetalhes;
   declare infoSerieSelecionada: SeriesDetalhes;
 
@@ -101,10 +102,17 @@ obterFilmesSimilares(id: number){
   })
 }
 
+obterSeriesSimilares(id: number){
+  this.tmdbService.obterSeriesSimilaresPorId(id).subscribe(data => {
+    this.seriesSimilares = data.results;
+  }, err => {
+    console.log('Erro ao obter a lista de series similares', err);
+  })
+}
+
 pesquisaGeral(query: string){
   this.tmdbService.pesquisaGeral(query).subscribe(data => {
     this.pesquisaItems = data.results;
-    console.log(this.pesquisaItems);
   }, err => {
     console.log('Erro ao pesquisar item desejado', err);
   })

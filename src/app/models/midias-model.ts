@@ -16,6 +16,15 @@ export class ResponsePageableSeries{
     ){}
 }
 
+export class ResponsePageableMidias{
+    constructor(
+        public page: number,
+        public results: Array<Midia>,
+        public total_pages: number,
+        public total_results: number,
+    ){}
+}
+
 export class SeriesDetalhes{
     constructor(
         public backdrop_path: string,
@@ -86,6 +95,26 @@ export class Serie{
         public overview: string,
         public popularity: number,
         public poster_path: string,
+        public vote_average: number,
+        public vote_count: number,
+    ){ }
+}
+
+export class Midia{
+    constructor(
+        public adult: boolean,
+        public backdrop_path: string,
+        public genre_ids: Array<Genre>,
+        public id: number,
+        public media_type: string,
+        public original_language: string,
+        public original_title: string,
+        public overview: string,
+        public popularity: number,
+        public poster_path: string,
+        public release_date: string,
+        public title: string,
+        public video: boolean,
         public vote_average: number,
         public vote_count: number,
     ){ }

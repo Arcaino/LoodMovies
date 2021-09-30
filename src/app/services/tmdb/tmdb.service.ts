@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_BASE, API_KEY } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { FilmeDetalhes, ResponsePageableFilmes, ResponsePageableSeries, SeriesDetalhes } from 'src/app/models/midias-model';
+import { FilmeDetalhes, ResponsePageableFilmes, ResponsePageableMidias, ResponsePageableSeries, SeriesDetalhes } from 'src/app/models/midias-model';
 
 @Injectable({
   providedIn: 'root'
@@ -47,11 +47,15 @@ constructor(private httpClient: HttpClient) { }
     return this.httpClient.get<ResponsePageableFilmes>(`${API_BASE}movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
   } 
 
-  public pesquisaGeral(query : string) : Observable<any>{
-    return this.httpClient.get<any>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
+  public obterSeriesSimilaresPorId(id: number) : Observable<ResponsePageableSeries>{
+    return this.httpClient.get<ResponsePageableSeries>(`${API_BASE}tv/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
   }
 
-  public listarTodosEmTrending() : Observable<any>{
-    return this.httpClient.get<any>(`${API_BASE}trending/all/week?api_key=${API_KEY}`)
+  public pesquisaGeral(query : string) : Observable<ResponsePageableMidias>{
+    return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
+  }
+
+  public listarTodosEmTrending() : Observable<ResponsePageableMidias>{
+    return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}trending/all/week?api_key=${API_KEY}`)
   }
 }
