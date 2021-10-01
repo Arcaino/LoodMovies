@@ -6,12 +6,15 @@ import { SwiperModule } from 'swiper/angular';
 import { ChartItemRoutingModule } from './slider/slider-routing.module';
 import { ItemComponent } from './item/item.component';
 import { ListaComponent } from './lista/lista.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   imports: [
     CommonModule,
     SwiperModule,
-    ChartItemRoutingModule
+    ChartItemRoutingModule,
+    NgxPaginationModule,
   ],
   declarations: [
     CategoriaComponent,

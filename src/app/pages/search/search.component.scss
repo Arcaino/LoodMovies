@@ -28,3 +28,19 @@
     text-transform: uppercase;
     color: var(--corTexto);
 }
+
+:host ::ng-deep .item{
+    margin: 0 !important;
+    &__imagem{
+        width: 8rem !important;
+    }
+}
+
+.midias{
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: ". .";
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}

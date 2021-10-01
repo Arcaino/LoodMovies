@@ -81,6 +81,7 @@ listarSeriesMaisBemVotadas(){
 obterInformacoesMidiaSelecionada(id: number){
   this.tmdbService.obterInformacoesDoFilmePorId(id).subscribe(data => {
     this.infoFilmeSelecionado = data;
+    console.log(this.infoFilmeSelecionado);
   }, err => {
     console.log('Erro ao listar informações do filme selecionado', err);
   })
@@ -113,6 +114,7 @@ obterSeriesSimilares(id: number){
 pesquisaGeral(query: string){
   this.tmdbService.pesquisaGeral(query).subscribe(data => {
     this.pesquisaItems = data.results;
+    console.log(data);
   }, err => {
     console.log('Erro ao pesquisar item desejado', err);
   })

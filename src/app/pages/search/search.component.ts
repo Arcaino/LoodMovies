@@ -22,9 +22,11 @@ export class SearchComponent implements OnInit {
   }
 
   Pesquisar(){
-    if(this.name == ""){
+    if(this.name == ''){
+      $(".resultados__midias").css("grid-template-areas", ". .");
       this.ngOnInit();
     }else{
+        $(".resultados__midias").css("grid-template-areas", "unset");
         this.listaService.pesquisaGeral(this.name);
         this.listaAPI = this.listaService.pesquisaItems;
         this.title = 'Resultados';

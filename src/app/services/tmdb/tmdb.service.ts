@@ -52,6 +52,7 @@ constructor(private httpClient: HttpClient) { }
   }
 
   public pesquisaGeral(query : string) : Observable<ResponsePageableMidias>{
+    console.log(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
     return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
   }
 

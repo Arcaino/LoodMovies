@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListaComponent implements OnInit {
 
   @Input() listaAPI : any;
-  @Input() listaAPIComplementar : any;
 
   constructor() { }
 
