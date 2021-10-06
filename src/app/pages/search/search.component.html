@@ -4,18 +4,24 @@
 <h1 class="titulo">{{title}}</h1>
 
 
-<div class="midias">
+<table class="midias">
   <ng-container *ngIf="!name">
     <ng-container *ngFor="let item of listaService.todosEmTrending;">
-      <app-item *ngIf="item.poster_path" class="resultados__midias__item" [item]="item"></app-item>
+      <tr>
+        <app-item *ngIf="item.poster_path" class="resultados__midias__item" [item]="item"></app-item>
+      </tr>
     </ng-container>
   </ng-container>
   <ng-container *ngIf="name">
     <ng-container *ngFor="let item of Contador(20);let i = index">
-      <app-item *ngIf="listaAPI[i].poster_path;else substituirSemCapa" class="resultados__midias__item" [item]="listaAPI[i]"></app-item>
+      <tr>
+        <app-item *ngIf="listaAPI[i].poster_path;else substituirSemCapa" class="resultados__midias__item" [item]="listaAPI[i]"></app-item>
+      </tr>
       <ng-template #substituirSemCapa>
-        <app-item *ngIf="listaAPISimilares[i].poster_path" class="resultados__midias__item" [item]="listaAPISimilares[i]"></app-item>
+        <tr>
+          <app-item *ngIf="listaAPISimilares[i].poster_path" class="resultados__midias__item" [item]="listaAPISimilares[i]"></app-item>
+        </tr>
       </ng-template>
     </ng-container>
   </ng-container>
-</div>
+</table>

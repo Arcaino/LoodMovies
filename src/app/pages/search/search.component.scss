@@ -30,7 +30,7 @@
 }
 
 :host ::ng-deep .item{
-    margin: 0 !important;
+    margin: .5rem .5rem !important;
     &__imagem{
         width: 128px !important;
         height: 192px !important;
@@ -38,12 +38,9 @@
 }
 
 .midias{
-    display: grid;
-    gap: 1rem;
-    grid-template-areas: ". .";
-    justify-content: space-evenly;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
 }
 
 .paginacao{
@@ -62,41 +59,5 @@
             filter: invert(100%);
             width: 12px;
         }
-    }
-}
-
-@media (min-width: 576px) { 
-    .midias{
-        grid-template-areas: ". . ."
-    }
-}
-
-@media (min-width: 768px) { 
-    .midias{
-        grid-template-areas: ". . . . ."
-    }
-}
-
-@media (min-width: 992px) { 
-    .midias{
-        grid-template-areas: ". . . . . . ."
-    }
-}
-
-@media (min-width: 1200px) { 
-    .midias{
-        grid-template-areas: ". . . . . . . . "
-    }
-}
-
-@media (min-width: 1400px) { 
-    .midias{
-        grid-template-areas: ". . . . . . . . . "
-    }
-}
-
-@media (min-width: 1680px) { 
-    .midias{
-        grid-template-areas: ". . . . . . . . . . "
     }
 }
