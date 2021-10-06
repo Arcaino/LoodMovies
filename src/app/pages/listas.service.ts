@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilmeDetalhes, Filme, SeriesDetalhes, Serie, Midia } from '../models/midias-model';
+import { FilmeDetalhes, Filme, SeriesDetalhes, Serie, Midia, ResponsePageableMidias } from '../models/midias-model';
 import { TmdbService } from '../services/tmdb/tmdb.service';
 
 @Injectable({
@@ -15,6 +15,8 @@ export class ListasService {
   seriesMaisBemVotadas: Serie[] = [];
   filmesSimilares: Filme[] = [];
   seriesSimilares: Serie[] = [];
+  filmesRecomendados: Filme[] = [];
+  seriesRecomendadas: Serie[] = [];
   pesquisaItems: Midia[] = [];
   todosEmTrending: Midia[] = [];
   declare infoFilmeSelecionado: FilmeDetalhes;
@@ -114,9 +116,24 @@ obterSeriesSimilares(id: number){
 pesquisaGeral(query: string){
   this.tmdbService.pesquisaGeral(query).subscribe(data => {
     this.pesquisaItems = data.results;
-    console.log(data);
   }, err => {
     console.log('Erro ao pesquisar item desejado', err);
+  })
+}
+
+obterFilmesRecomendados(id: number){
+  this.tmdbService.obterRecomendacoesFilmePorId(id).subscribe(data => {
+    this.filmesRecomendados = data.results;
+  }, err => {
+    console.log('Erro ao obter a lista de filmes similares', err);
+  })
+}
+
+obterSeriesRecomendadas(id: number){
+  this.tmdbService.obterRecomendacoesSeriePorId(id).subscribe(data => {
+    this.seriesRecomendadas = data.results;
+  }, err => {
+    console.log('Erro ao obter a lista de filmes similares', err);
   })
 }
 

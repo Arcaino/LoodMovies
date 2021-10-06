@@ -10,7 +10,8 @@ export class SearchComponent implements OnInit {
 
   name: any;
   listaAPI: any;
-  listaAPIComplementar: any;
+  listaAPISimilares: any;
+  listaAPIRecomendacoes: any;
   title: string = '';
 
   constructor(public listaService: ListasService) { }
@@ -32,14 +33,26 @@ export class SearchComponent implements OnInit {
         this.title = 'Resultados';
         if(this.listaService.pesquisaItems[0].media_type == "tv"){
           this.listaService.obterSeriesSimilares(this.listaService.pesquisaItems[0].id);
-          this.listaAPIComplementar = this.listaService.seriesSimilares;
+          this.listaService.obterSeriesRecomendadas(this.listaService.pesquisaItems[0].id);
+          this.listaAPISimilares = this.listaService.seriesSimilares;
+          this.listaAPIRecomendacoes = this.listaService.seriesRecomendadas;
         }
         else if(this.listaService.pesquisaItems[0].media_type == "movie"){
           this.listaService.obterFilmesSimilares(this.listaService.pesquisaItems[0].id);
-          this.listaAPIComplementar = this.listaService.filmesSimilares;
+          this.listaService.obterFilmesRecomendados(this.listaService.pesquisaItems[0].id);
+          this.listaAPISimilares = this.listaService.filmesSimilares;
+          this.listaAPIRecomendacoes = this.listaService.filmesRecomendados;
         }
+
+        Array.prototype.push.apply(this.listaAPI,this.listaAPIRecomendacoes); 
+        console.log(this.listaAPI);
+
         return this.listaAPI;
     }
+  }
+
+  Contador(current: number) {
+    return new Array(current);
   }
 
 }

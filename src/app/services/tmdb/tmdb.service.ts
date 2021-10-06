@@ -52,11 +52,18 @@ constructor(private httpClient: HttpClient) { }
   }
 
   public pesquisaGeral(query : string) : Observable<ResponsePageableMidias>{
-    console.log(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
     return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
   }
 
   public listarTodosEmTrending() : Observable<ResponsePageableMidias>{
     return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}trending/all/week?api_key=${API_KEY}`)
+  }
+
+  public obterRecomendacoesSeriePorId(id: number) : Observable<ResponsePageableSeries>{
+    return this.httpClient.get<ResponsePageableSeries>(`${API_BASE}tv/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`)
+  }
+
+  public obterRecomendacoesFilmePorId(id: number) : Observable<ResponsePageableFilmes>{
+    return this.httpClient.get<ResponsePageableFilmes>(`${API_BASE}movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`)
   }
 }
