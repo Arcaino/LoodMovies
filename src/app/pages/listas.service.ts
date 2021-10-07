@@ -22,6 +22,9 @@ export class ListasService {
   declare infoFilmeSelecionado: FilmeDetalhes;
   declare infoSerieSelecionada: SeriesDetalhes;
 
+  ultimaPagina: number = 0;
+  paginaAtual: number = 0;
+
 constructor(private tmdbService: TmdbService) { }
 
 listarTopMovies(){
@@ -40,9 +43,11 @@ listarTrendingFilms(){
   })
 }
 
-listarEmAlta(){
-  this.tmdbService.listarTodosEmTrending().subscribe(data => {
+listarEmAlta(page: number){
+  this.tmdbService.listarTodosEmTrending(page).subscribe(data => {
     this.todosEmTrending = data.results;
+    this.ultimaPagina = data.total_pages;
+    this.paginaAtual = data.page;
   }, err => {
     console.log('Erro ao listar midias em alta', err);
   })
@@ -83,7 +88,6 @@ listarSeriesMaisBemVotadas(){
 obterInformacoesMidiaSelecionada(id: number){
   this.tmdbService.obterInformacoesDoFilmePorId(id).subscribe(data => {
     this.infoFilmeSelecionado = data;
-    console.log(this.infoFilmeSelecionado);
   }, err => {
     console.log('Erro ao listar informações do filme selecionado', err);
   })

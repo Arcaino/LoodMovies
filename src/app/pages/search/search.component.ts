@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   constructor(public listaService: ListasService) { }
 
   ngOnInit() {
-    this.listaService.listarEmAlta();
+    this.listaService.listarEmAlta(1);
     this.listaAPI = this.listaService.todosEmTrending;
     this.title = 'Principais buscas';
   }

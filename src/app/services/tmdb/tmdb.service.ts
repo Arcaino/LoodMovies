@@ -55,8 +55,8 @@ constructor(private httpClient: HttpClient) { }
     return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}search/multi?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
   }
 
-  public listarTodosEmTrending() : Observable<ResponsePageableMidias>{
-    return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}trending/all/week?api_key=${API_KEY}`)
+  public listarTodosEmTrending(page : number) : Observable<ResponsePageableMidias>{
+    return this.httpClient.get<ResponsePageableMidias>(`${API_BASE}trending/all/week?api_key=${API_KEY}&page=${page}`)
   }
 
   public obterRecomendacoesSeriePorId(id: number) : Observable<ResponsePageableSeries>{
