@@ -47,7 +47,7 @@ listarEmAlta(page: number){
   this.tmdbService.listarTodosEmTrending(page).subscribe(data => {
     this.todosEmTrending = data.results;
     this.ultimaPagina = data.total_pages;
-    this.paginaAtual = data.page;
+    this.paginaAtual = data.page
   }, err => {
     console.log('Erro ao listar midias em alta', err);
   })

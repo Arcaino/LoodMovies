@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListasService } from '../listas.service';
 
 @Component({
@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.listaService.listarEmAlta(1);
-    this.listaAPI = this.listaService.todosEmTrending;
     this.title = 'Principais buscas';
   }
 

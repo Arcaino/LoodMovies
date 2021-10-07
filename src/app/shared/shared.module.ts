@@ -7,6 +7,7 @@ import { ChartItemRoutingModule } from './slider/slider-routing.module';
 import { ItemComponent } from './item/item.component';
 import { ListaComponent } from './lista/lista.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginacaoComponent } from './paginacao/paginacao.component';
 
 
 @NgModule({
@@ -20,13 +21,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CategoriaComponent,
     SliderComponent,
     ItemComponent,
-    ListaComponent
+    ListaComponent,
+    PaginacaoComponent
   ],
   exports: [
     CategoriaComponent,
     SliderComponent,
     ItemComponent,
-    ListaComponent
+    ListaComponent,
+    PaginacaoComponent
   ]
 })
 export class SharedModule { }

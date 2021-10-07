@@ -1,0 +1,29 @@
+<div class="paginacao">
+  <ul class="paginacao__lista">
+      <li class="paginacao__lista__item">
+          <a class="paginacao__lista__item__link" (click)="metodoPaginacao(1)">First</a>
+      </li>
+      <li class="paginacao__lista__item">
+          <a class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.paginaAtual - 1)">
+            <img src="../../../assets/icons/arrow-left-solid.svg">
+          </a>
+      </li>
+      <li class="paginacao__lista__item">
+          <a *ngIf="listaService.paginaAtual - 1" class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.paginaAtual - 1)">{{listaService.paginaAtual - 1}}</a>
+      </li>
+      <li class="paginacao__lista__item paginaAtiva">
+        <a class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.paginaAtual)">{{listaService.paginaAtual}}</a>
+      </li>
+      <li class="paginacao__lista__item">
+        <a class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.paginaAtual + 1)">{{listaService.paginaAtual + 1}}</a>
+      </li>
+      <li class="paginacao__lista__item">
+          <a class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.paginaAtual+1)">
+            <img src="../../../assets/icons/arrow-right-solid.svg">
+          </a>
+      </li>
+      <li class="paginacao__lista__item">
+          <a class="paginacao__lista__item__link" (click)="metodoPaginacao(listaService.ultimaPagina)">Last</a>
+      </li>
+  </ul>
+</div>

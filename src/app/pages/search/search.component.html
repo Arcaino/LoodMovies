@@ -25,32 +25,6 @@
     </ng-container>
   </ng-container>
 </table>
-<div class="paginacao">
-  <ul class="paginacao__lista">
-      <li class="paginacao__lista__item">
-          <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(1)">First</a>
-      </li>
-      <li class="paginacao__lista__item">
-          <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.paginaAtual - 1)">
-            <img src="../../../assets/icons/arrow-left-solid.svg">
-          </a>
-      </li>
-      <li class="paginacao__lista__item">
-          <a *ngIf="listaService.paginaAtual - 1" class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.paginaAtual - 1)">{{listaService.paginaAtual - 1}}</a>
-      </li>
-      <li class="paginacao__lista__item paginaAtiva">
-        <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.paginaAtual)">{{listaService.paginaAtual}}</a>
-      </li>
-      <li class="paginacao__lista__item">
-        <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.paginaAtual + 1)">{{listaService.paginaAtual + 1}}</a>
-      </li>
-      <li class="paginacao__lista__item">
-          <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.paginaAtual+1)">
-            <img src="../../../assets/icons/arrow-right-solid.svg">
-          </a>
-      </li>
-      <li class="paginacao__lista__item">
-          <a class="paginacao__lista__item__link" (click)="listaService.listarEmAlta(listaService.ultimaPagina)">Last</a>
-      </li>
-  </ul>
-</div>
+<ng-container *ngIf="!name">
+  <app-paginacao [metodoPaginacao]="listaService.listarEmAlta"></app-paginacao>
+</ng-container>

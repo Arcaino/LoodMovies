@@ -37,45 +37,18 @@
     }
 }
 
+:host ::ng-deep .navbar__menu__pesquisa.active{
+    display: none !important;
+}
+
 .midias{
     display: flex;
     justify-content: center;
     flex-flow: wrap;
 }
 
-.paginacao{
-    display: flex;
-    justify-content: center;
-    &__lista{
-        display: flex;
-        border-radius: .5rem;
-        padding: 0;
-        margin: 1rem 0;
-        &__item{
-            width: 2rem;
-            height: 2rem;
-            margin: 0 .5rem;
-            display: flex;
-            justify-content: center;
-            &__link{        
-                margin: inherit;        
-                text-decoration: none;
-                color: var(--corTexto);
-                img{
-                    width: 1rem;
-                }
-            }
-        }
-        &__item:first-child{
-            display: none;
-        }
-        &__item:last-child{
-            display: none;
-        }
+@media (min-width: 992px) {
+    .pesquisa__input{
+        display: none;
     }
-}
-
-.paginaAtiva{
-    border: 3px solid var(--corSecundaria);
-    border-radius: 100%;
 }

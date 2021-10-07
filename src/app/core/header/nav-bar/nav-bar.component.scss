@@ -143,9 +143,19 @@ app-relogio{
                 justify-content: end;
                 width: 175px;
             }
+            &__pesquisa.active{
+                display: flex;
+                justify-content: unset;
+                width: unset;
+            }
             &__item{
                 margin: 0 5rem;       
             }
+        }
+        &__menu.active{
+            display: flex;
+            width: unset;
+            text-align: unset;
         }
     }
 }
